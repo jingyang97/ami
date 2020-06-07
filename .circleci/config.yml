@@ -8,7 +8,7 @@ jobs:
       - checkout
       - run:
           name: Validate base
-          command: packer validate ./ami/ami.json
+          command: packer validate ami.json
 
   build-dev-ami:
     docker:
@@ -20,7 +20,7 @@ jobs:
           at: ~/ami
       - run:
           name: Build dev vpc
-          command: packer build ./ami/ami.json
+          command: packer build ami.json
           # no_output_timeout: 30m
 
 
