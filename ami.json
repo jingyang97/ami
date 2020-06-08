@@ -36,7 +36,7 @@
                 "sudo add-apt-repository universe",
                 "sudo apt-get update",
                 "sudo apt-get install python3",
-                "sudo apt install python3-pip -y",
+                "sudo apt-get install python3-pip -y",
                 "sudo apt-get install mysql-server -y",
                 "sudo apt-get install libmysqlclient-dev -y",
                 "sudo apt-get install unzip"
