@@ -17,7 +17,10 @@
             "instance_type": "t2.micro",
             "source_ami": "{{user `source_ami`}}",
             "ssh_username": "{{user `ssh_username`}}",
-            "ami_users":"{{user `ami_users_dev`,`ami_users_prod`}}",
+            "ami_users": [
+                "{{user `ami_users_dev`}}",
+                "{{user `ami_users_prod`}}"
+            ],
             "ami_name": "csye6225_a4_{{timestamp}}",
             "ami_description": "Ubuntu AMI for CSYE6225 Summer 2020 Assignment #04",
             "launch_block_device_mappings": [
