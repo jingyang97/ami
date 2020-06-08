@@ -4,7 +4,8 @@
         "aws_secret_key": "{{env `AWS_SECRET_ACCESS_KEY_DEV`}}",
         "aws_region": "{{env `AWS_DEFAULT_REGION_DEV`}}",
         "source_ami": "ami-068663a3c619dd892",
-        "ssh_username": "ubuntu"
+        "ssh_username": "ubuntu",
+        "ami_users": "{{env `AWS_DEV_ACCOUNT`}}"
     },
     "builders": [
         {
@@ -15,6 +16,7 @@
             "instance_type": "t2.micro",
             "source_ami": "{{user `source_ami`}}",
             "ssh_username": "{{user `ssh_username`}}",
+            "ami_users": "{{user `ami_users`}}",
             "ami_name": "csye6225_a4_{{timestamp}}",
             "ami_description": "Ubuntu AMI for CSYE6225 Summer 2020 Assignment #04",
             "launch_block_device_mappings": [
