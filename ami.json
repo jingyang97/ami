@@ -43,7 +43,7 @@
                 "sudo apt-get update",
                 "sudo apt-get install software-properties-common",
                 "sudo apt-get install python3",
-                "sudo apt-get install mysql-server mysql-client --fix-missing --fix-broken -y",
+                "sudo apt-get install mysql-server-8.0 mysql-client-8.0 --fix-missing --fix-broken -y",
                 "sudo apt-get install libmysqlclient-dev -y",
                 "sudo apt-get install unzip"
             ]
