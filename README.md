@@ -12,4 +12,4 @@ python3 manage.py runserver 0.0.0.0:8000
 
 1. set environment variable in your computer
 2. run `packer build`
-3.                 // "sudo apt-get install python3-pip -y",
+3.                 //
