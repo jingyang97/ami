@@ -5,7 +5,8 @@
         "aws_region": "{{env `AWS_DEFAULT_REGION_DEV`}}",
         "source_ami": "ami-068663a3c619dd892",
         "ssh_username": "ubuntu",
-        "ami_users": "{{env `AWS_DEV_ACCOUNT`}}"
+        "ami_users_dev":"{{env `AWS_DEV_ACCOUNT`}}",
+        "ami_users_prod": "{{env `AWS_PROD_ACCOUNT`}}"
     },
     "builders": [
         {
@@ -16,7 +17,10 @@
             "instance_type": "t2.micro",
             "source_ami": "{{user `source_ami`}}",
             "ssh_username": "{{user `ssh_username`}}",
-            "ami_users": "{{user `ami_users`}}",
+            "ami_users": [
+                "{{user `ami_users_dev`}}",
+                "{{user `ami_users_prod`}}"
+            ],
             "ami_name": "csye6225_a4_{{timestamp}}",
             "ami_description": "Ubuntu AMI for CSYE6225 Summer 2020 Assignment #04",
             "launch_block_device_mappings": [
@@ -27,17 +31,15 @@
                     "delete_on_termination": true
                 }
             ]
+
         }
     ],
     "provisioners": [
         {
             "type": "shell",
             "inline": [
-                "sudo add-apt-repository universe",
                 "sudo apt-get update",
                 "sudo apt-get install python3",
-                "sudo apt-get install python3-pip -y",
-                "sudo apt-get install mysql-server -y",
                 "sudo apt-get install libmysqlclient-dev -y",
                 "sudo apt-get install unzip"
             ]
@@ -45,6 +47,15 @@
         {
             "type": "shell",
             "inline": [
+                "curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py",
+                "python3 get-pip.py",
+                "echo \"export PATH=\\$PATH:/home/ubuntu/.local/bin\" >> ~/.bashrc"
+            ]
+        },
+        {
+            "type": "shell",
+            "inline": [
+                "sudo apt-get install mysql-server -y",
                 "sudo mysql -u root -e \"use mysql; ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '12345678'; FLUSH PRIVILEGES;CREATE DATABASE webapp;\""
             ]
         },
@@ -56,13 +67,7 @@
         {
             "type": "shell",
             "inline": [
-                "pip3 install -r /home/ubuntu/requirements.txt"
-            ]
-        },
-        {
-            "type": "shell",
-            "inline": [
-                "pip3 install -r /home/ubuntu/requirements.txt"
+                "/home/ubuntu/.local/bin/pip install -r /home/ubuntu/requirements.txt"
             ]
         }
     ]
