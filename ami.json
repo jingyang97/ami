@@ -5,8 +5,8 @@
         "aws_region": "{{env `AWS_DEFAULT_REGION_DEV`}}",
         "source_ami": "ami-068663a3c619dd892",
         "ssh_username": "ubuntu",
-        "ami_users": ["{{env `AWS_DEV_ACCOUNT`}}",
-            "{{env `AWS_PROD_ACCOUNT`}}"]
+        "ami_users_dev":"{{env `AWS_DEV_ACCOUNT`}}",
+        "ami_users_prod": "{{env `AWS_PROD_ACCOUNT`}}"
     },
     "builders": [
         {
@@ -17,7 +17,9 @@
             "instance_type": "t2.micro",
             "source_ami": "{{user `source_ami`}}",
             "ssh_username": "{{user `ssh_username`}}",
-            "ami_users": "{{user `ami_users`}}",
+            "ami_users":[
+                "{{user `ami_users_dev`}}",
+                "{{user `ami_users_prod`}}"],
             "ami_name": "csye6225_a4_{{timestamp}}",
             "ami_description": "Ubuntu AMI for CSYE6225 Summer 2020 Assignment #04",
             "launch_block_device_mappings": [
