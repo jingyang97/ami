@@ -33,6 +33,7 @@
         {
             "type": "shell",
             "inline": [
+                "sudo add-apt-repository universe",
                 "sudo apt-get update",
                 "sudo apt -y upgrade",
                 "sudo apt-get install python3-pip -y",
