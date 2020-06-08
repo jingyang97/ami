@@ -33,13 +33,15 @@
         {
             "type": "shell",
             "inline": [
+                "sudo apt install software-properties-common",
                 "sudo add-apt-repository universe",
                 "sudo apt-get update",
-                "sudo apt -y upgrade",
+                "sudo apt-get install python3",
                 "sudo apt-get install python3-pip -y",
                 "sudo apt-get install mysql-server -y",
                 "sudo apt-get install libmysqlclient-dev -y",
                 "sudo apt-get install unzip"
+
             ]
         },
         {
