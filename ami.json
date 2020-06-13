@@ -37,6 +37,8 @@
         {
             "type": "shell",
             "inline": [
+                "echo \"waiting 180 seconds for cloud-init to update /etc/apt/sources.list\"",
+                "timeout 180 /bin/bash -c 'until stat /var/lib/cloud/instance/boot-finished 2>/dev/null; do echo waiting ...; sleep 1; done'",
                 "sudo apt-get update -y",
                 "sudo apt-get upgrade -y",
                 "sudo apt-get install python3  --fix-missing --fix-broken -y",
