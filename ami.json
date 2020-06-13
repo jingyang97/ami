@@ -5,7 +5,7 @@
         "aws_region": "{{env `AWS_DEFAULT_REGION_DEV`}}",
         "source_ami": "ami-068663a3c619dd892",
         "ssh_username": "ubuntu",
-        "ami_users_dev":"{{env `AWS_DEV_ACCOUNT`}}",
+        "ami_users_dev": "{{env `AWS_DEV_ACCOUNT`}}",
         "ami_users_prod": "{{env `AWS_PROD_ACCOUNT`}}"
     },
     "builders": [
@@ -31,20 +31,14 @@
                     "delete_on_termination": true
                 }
             ]
-
         }
     ],
     "provisioners": [
         {
             "type": "shell",
             "inline": [
-                "sudo apt-get update",
-                "sudo apt-get upgrade -y"
-            ]
-        },
-        {
-            "type": "shell",
-            "inline": [
+                "sudo apt-get update -y",
+                "sudo apt-get upgrade -y",
                 "sudo apt-get install python3  --fix-missing --fix-broken -y",
                 "sudo apt-get install unzip --fix-missing --fix-broken -y"
             ]
