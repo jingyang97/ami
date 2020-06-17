@@ -42,7 +42,8 @@
                 "sudo apt-get update -y",
                 "sudo apt-get upgrade -y",
                 "sudo apt-get install python3  --fix-missing --fix-broken -y",
-                "sudo apt-get install unzip --fix-missing --fix-broken -y"
+                "sudo apt-get install unzip --fix-missing --fix-broken -y",
+                "sudo apt-get install musql-client --fix-missing --fix-broken -y"
             ]
         },
         {
