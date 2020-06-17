@@ -4,3 +4,4 @@ django-bootstrap4
 password-strength
 PyMySQL
 cryptography
+Pillow
