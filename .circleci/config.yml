@@ -29,5 +29,6 @@ workflows:
     jobs:
       - validate
       - build-dev-ami:
+          context: csye6225-aws-dev
           requires:
             - validate
