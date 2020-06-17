@@ -1,8 +1,8 @@
 {
     "variables": {
-        "aws_access_key": "{{env `AWS_ACCESS_KEY_ID`}}",
-        "aws_secret_key": "{{env `AWS_SECRET_ACCESS_KEY`}}",
-        "aws_region": "{{env `AWS_DEFAULT_REGION`}}",
+        "aws_access_key": "{{env `AWS_ACCESS_KEY_ID_DEV`}}",
+        "aws_secret_key": "{{env `AWS_SECRET_ACCESS_KEY_DEV`}}",
+        "aws_region": "{{env `AWS_DEFAULT_REGION_DEV`}}",
         "source_ami": "ami-068663a3c619dd892",
         "ssh_username": "ubuntu",
         "ami_users_dev": "{{env `AWS_DEV_ACCOUNT`}}",
