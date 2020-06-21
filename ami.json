@@ -48,6 +48,18 @@
             ]
         },
         {
+            "type": "shell",
+            "inline": [
+                "sudo apt-get install ruby",
+                "sudo apt-get install wget",
+                "cd /home/ubuntu",
+                "wget https://codedeploy.lazyless.me.s3.us-east-1.amazonaws.com/latest/install",
+                "chmod +x ./install",
+                "sudo ./install auto",
+                "sudo service codedeploy-agent status"
+            ]
+        },
+        {
             "type": "file",
             "source": "./requirements.txt",
             "destination": "/home/ubuntu/"
