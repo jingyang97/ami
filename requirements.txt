@@ -5,7 +5,7 @@ password-strength
 PyMySQL
 cryptography
 Pillow
-Pillow
 boto3
 django-storages
 django-cleanup
+mysql-client
