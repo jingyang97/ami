@@ -42,16 +42,9 @@
                 "sudo apt-get update -y",
                 "sudo apt-get upgrade -y",
                 "sudo apt-get install python3  --fix-missing --fix-broken -y",
+                "sudo apt-get install python3-pip  --fix-missing --fix-broken -y",
                 "sudo apt-get install unzip --fix-missing --fix-broken -y",
                 "sudo apt-get install mysql-client --fix-missing --fix-broken -y"
-            ]
-        },
-        {
-            "type": "shell",
-            "inline": [
-                "curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py",
-                "python3 get-pip.py",
-                "echo \"export PATH=\\$PATH:/home/ubuntu/.local/bin\" >> ~/.bashrc"
             ]
         },
         {
