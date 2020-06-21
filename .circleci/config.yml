@@ -19,14 +19,31 @@ jobs:
       - attach_workspace:
           at: ~/ami
       - run:
-          name: build
+          name: install awscli
+          command: |-
+            curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+            unzip awscliv2.zip
+            sudo ./aws/install
+            aws --version
+      - run:
+          name: download packer binary
+          command: |-
+            echo "I will download it later"
+      - run:
+          name: prepare env var
           command: |-
             export AWS_ACCESS_KEY_ID_DEV=${AWS_ACCESS_KEY_ID}
             export AWS_SECRET_ACCESS_KEY_DEV=${AWS_SECRET_ACCESS_KEY}
             export AWS_DEFAULT_REGION_DEV=${AWS_DEFAULT_REGION}
             export AWS_DEV_ACCOUNT=${AWS_DEV_ACCOUNT}
             export AWS_PROD_ACCOUNT=${AWS_PROD_ACCOUNT}
+      - run:
+          name: validater packer template
+          command: |-
             packer validate ami.json
+      - run:
+          name: build
+          command: |-
             packer build ami.json
           # no_output_timeout: 30m
 
