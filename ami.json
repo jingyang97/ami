@@ -55,7 +55,7 @@
         {
             "type": "shell",
             "inline": [
-                "/home/ubuntu/.local/bin/pip install -r /home/ubuntu/requirements.txt"
+                "pip3 install -r /home/ubuntu/requirements.txt"
             ]
         }
     ]
