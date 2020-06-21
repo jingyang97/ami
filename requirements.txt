@@ -8,4 +8,3 @@ Pillow
 boto3
 django-storages
 django-cleanup
-mysql-client
