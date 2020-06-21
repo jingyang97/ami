@@ -1,16 +1,16 @@
 version: 2
 jobs:
-  validate:
-    working_directory: ~/ami
-    docker:
-      - image: hashicorp/packer:1.5.6
-    steps:
-      - checkout
-      - run:
-          name: Validate base
-          command: packer validate ami.json
+  # validate:
+  #   working_directory: ~/ami
+  #   docker:
+  #     - image: hashicorp/packer:1.5.6
+  #   steps:
+  #     - checkout
+  #     - run:
+  #         name: Validate
+  #         command: packer validate ami.json
 
-  build-dev-ami:
+  build:
     docker:
       - image: hashicorp/packer:1.5.6
     working_directory: ~/ami
@@ -19,16 +19,23 @@ jobs:
       - attach_workspace:
           at: ~/ami
       - run:
-          name: Build dev vpc
-          command: packer build ami.json
+          name: Build AMI
+          command: |-
+            export AWS_ACCESS_KEY_ID_DEV=${AWS_ACCESS_KEY_ID}
+            export AWS_SECRET_ACCESS_KEY_DEV=${AWS_SECRET_ACCESS_KEY}
+            export AWS_DEFAULT_REGION_DEV=${AWS_DEFAULT_REGION}
+            export AWS_DEV_ACCOUNT=${AWS_DEV_ACCOUNT}
+            export AWS_PROD_ACCOUNT=${AWS_PROD_ACCOUNT}
+            packer validate ami.json
+            packer build ami.json
           # no_output_timeout: 30m
 
-workflows:
-  version: 2
-  build-and-deploy:
-    jobs:
-      - validate
-      - build-dev-ami:
-          context: csye6225-aws-dev
-          requires:
-            - validate
+# workflows:
+#   version: 2
+#   build-and-deploy:
+#     jobs:
+#       - validate
+#       - build-dev-ami:
+#           context: csye6225-aws-dev
+#           requires:
+#             - validate

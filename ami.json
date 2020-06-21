@@ -3,7 +3,7 @@
         "aws_access_key": "{{env `AWS_ACCESS_KEY_ID_DEV`}}",
         "aws_secret_key": "{{env `AWS_SECRET_ACCESS_KEY_DEV`}}",
         "aws_region": "{{env `AWS_DEFAULT_REGION_DEV`}}",
-        "source_ami": "ami-068663a3c619dd892",
+        "source_ami": "ami-085925f297f89fce1",
         "ssh_username": "ubuntu",
         "ami_users_dev": "{{env `AWS_DEV_ACCOUNT`}}",
         "ami_users_prod": "{{env `AWS_PROD_ACCOUNT`}}"
@@ -26,7 +26,7 @@
             "launch_block_device_mappings": [
                 {
                     "device_name": "/dev/sda1",
-                    "volume_size": 10,
+                    "volume_size": 20,
                     "volume_type": "gp2",
                     "delete_on_termination": true
                 }
