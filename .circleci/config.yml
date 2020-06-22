@@ -10,7 +10,7 @@ jobs:
   #         name: Validate
   #         command: packer validate ami.json
 
-  build:
+  build-dev-ami:
     docker:
       - image: hashicorp/packer:1.5.6
     working_directory: ~/ami
