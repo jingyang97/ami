@@ -45,7 +45,6 @@
                 "sudo apt-get install python3-pip  --fix-missing --fix-broken -y",
                 "sudo apt-get install unzip --fix-missing --fix-broken -y",
                 "sudo apt-get install mysql-client --fix-missing --fix-broken -y",
-                "echo \"===============================Done=========================\"",
                 "ls -al"
             ]
         },
@@ -54,14 +53,10 @@
             "inline": [
                 "sudo apt-get install ruby -y",
                 "sudo apt-get install wget -y",
-                "echo \"===============================wget=========================\"",
                 "cd /home/ubuntu",
                 "wget https://aws-codedeploy-us-east-1.s3.us-east-1.amazonaws.com/latest/install",
-                "echo \"===============================http=========================\"",
                 "chmod +x ./install",
-                "echo \"===============================install=========================\"",
-                "sudo ./install auto",
-                "echo \"===============================auto=========================\""
+                "sudo ./install auto"
             ]
         },
         {
