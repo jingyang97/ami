@@ -63,8 +63,8 @@
             "type": "shell",
             "inline": [
                 "cd /home/ubuntu",
-                "wget https://s3.us-east-1.amazonaws.com/amazoncloudwatch-agent-us-east-1/ubuntu/arm64/latest/amazon-cloudwatch-agent.deb",
-                "sudo dpkg -i -E ./amazon-cloudwatch-agent.deb"
+                "wget https://s3.us-east-1.amazonaws.com/amazoncloudwatch-agent-us-east-1/amazon_linux/amd64/latest/amazon-cloudwatch-agent.rpm",
+                "sudo rpm -U ./amazon-cloudwatch-agent.rpm"
             ]
         },
         {
