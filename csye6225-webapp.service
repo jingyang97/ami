@@ -6,8 +6,8 @@ After=network.target
 ExecStart=/root/scripts/csye6225-webapp.sh
 Restart=always
 WorkingDirectory=/root
-User=ubuntu
-Group=ubuntu
+User=root
+Group=root
 StandardOutput=file:/var/log/csye6225-webapp/logs.log
 StandardError=file:/var/log/csye6225-webapp/logs.log
 
