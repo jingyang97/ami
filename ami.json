@@ -63,7 +63,7 @@
             "inline": [
                 "sudo apt-get install alien -y",
                 "cd /home/ubuntu",
-                "mkdir cloudwatch/install",
+                "mkdir /home/ubuntu/cloudwatch/install",
                 "cd /home/ubuntu/cloudwatch/install",
                 "wget https://s3.us-east-1.amazonaws.com/amazoncloudwatch-agent-us-east-1/ubuntu/amd64/latest/amazon-cloudwatch-agent.deb",
                 "chmod +x amazon-cloudwatch-agent.deb",
@@ -83,6 +83,7 @@
         {
             "type": "shell",
             "inline": [
+                "sudo mkdir /var/log/csye6225-webapp",
                 "cd /home/ubuntu",
                 "sudo chown root.root csye6225-cloudwatch.service",
                 "sudo chown root.root csye6225-webapp.service",
