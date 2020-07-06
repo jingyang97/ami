@@ -8,4 +8,4 @@ Pillow
 boto3
 django-storages
 django-cleanup
-django-statsd
+statsd
