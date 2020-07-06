@@ -13,3 +13,4 @@ StandardError=file:/var/log/csye6225-webapp/logs.log
 
 [Install]
 WantedBy=multi-user.target
+
