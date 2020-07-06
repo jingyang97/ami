@@ -3,9 +3,9 @@ Description=Unit for starting a basic Django app (running in port 8000)
 After=network.target
 
 [Service]
-ExecStart=/home/ubuntu/scripts/csye6225-webapp.sh
+ExecStart=/root/scripts/csye6225-webapp.sh
 Restart=always
-WorkingDirectory=/home/ubuntu
+WorkingDirectory=/root
 User=ubuntu
 Group=ubuntu
 StandardOutput=file:/var/log/csye6225-webapp/logs.log
