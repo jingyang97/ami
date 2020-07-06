@@ -4,7 +4,7 @@
         "aws_secret_key": "{{env `AWS_SECRET_ACCESS_KEY_DEV`}}",
         "aws_region": "{{env `AWS_DEFAULT_REGION_DEV`}}",
         "source_ami": "ami-085925f297f89fce1",
-        "ssh_username": "ubuntu",
+        "ssh_username": "root",
         "ami_users_dev": "{{env `AWS_DEV_ACCOUNT`}}",
         "ami_users_prod": "{{env `AWS_PROD_ACCOUNT`}}"
     },
@@ -52,7 +52,7 @@
             "inline": [
                 "sudo apt-get install ruby -y",
                 "sudo apt-get install wget -y",
-                "cd /home/ubuntu",
+                "cd /root",
                 "wget https://aws-codedeploy-us-east-1.s3.us-east-1.amazonaws.com/latest/install",
                 "chmod +x ./install",
                 "sudo ./install auto"
@@ -62,7 +62,7 @@
             "type": "shell",
             "inline": [
                 "sudo apt-get install alien -y",
-                "cd /home/ubuntu",
+                "cd /root",
                 "wget https://s3.us-east-1.amazonaws.com/amazoncloudwatch-agent-us-east-1/ubuntu/amd64/latest/amazon-cloudwatch-agent.deb",
                 "chmod +x amazon-cloudwatch-agent.deb",
                 "sudo dpkg -i -E ./amazon-cloudwatch-agent.deb"
@@ -71,18 +71,18 @@
         {
             "type": "file",
             "source": "./csye6225-cloudwatch.service",
-            "destination": "/home/ubuntu/"
+            "destination": "/root/"
         },
         {
             "type": "file",
             "source": "./csye6225-webapp.service",
-            "destination": "/home/ubuntu/"
+            "destination": "/root"
         },
         {
             "type": "shell",
             "inline": [
                 "sudo mkdir /var/log/csye6225-webapp",
-                "cd /home/ubuntu",
+                "cd /root",
                 "sudo chown root.root csye6225-cloudwatch.service",
                 "sudo chown root.root csye6225-webapp.service",
                 "sudo chmod 755 csye6225-cloudwatch.service",
@@ -97,12 +97,12 @@
         {
             "type": "file",
             "source": "./requirements.txt",
-            "destination": "/home/ubuntu/"
+            "destination": "/root"
         },
         {
             "type": "shell",
             "inline": [
-                "pip3 install -r /home/ubuntu/requirements.txt"
+                "pip3 install -r /root/requirements.txt"
             ]
         }
     ]
