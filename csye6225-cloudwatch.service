@@ -4,8 +4,8 @@ After=network.target
 
 [Service]
 ExecStart=/home/ubuntu/scripts/csye6225-cloudwatch.sh
-User=root
-Group=root
+User=ubuntu
+Group=ubuntu
 KillMode=process
 Restart=on-failure
 

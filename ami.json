@@ -81,7 +81,7 @@
         {
             "type": "shell",
             "inline": [
-                "sudo mkdir /var/log/csye6225-webapp",
+                "sudo mkdir /home/ubuntu/webapp-logs",
                 "cd /home/ubuntu",
                 "sudo chown root.root csye6225-cloudwatch.service",
                 "sudo chown root.root csye6225-webapp.service",
