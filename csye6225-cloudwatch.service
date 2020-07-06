@@ -1,0 +1,11 @@
+[Unit]
+Description=Unit for starting cloudwatch agent
+After=network.target
+
+[Service]
+ExecStart=/home/ubuntu/scripts/csye6225-cloudwatch.sh
+Restart=always
+
+
+[Install]
+WantedBy=multi-user.target
