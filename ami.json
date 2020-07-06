@@ -76,7 +76,7 @@
         {
             "type": "file",
             "source": "./csye6225-webapp.service",
-            "destination": "/home/ubuntu"
+            "destination": "/home/ubuntu/"
         },
         {
             "type": "shell",
@@ -97,7 +97,7 @@
         {
             "type": "file",
             "source": "./requirements.txt",
-            "destination": "/home/ubuntu"
+            "destination": "/home/ubuntu/"
         },
         {
             "type": "shell",
