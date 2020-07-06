@@ -63,8 +63,6 @@
             "inline": [
                 "sudo apt-get install alien -y",
                 "cd /home/ubuntu",
-                "mkdir /home/ubuntu/cloudwatch/install",
-                "cd /home/ubuntu/cloudwatch/install",
                 "wget https://s3.us-east-1.amazonaws.com/amazoncloudwatch-agent-us-east-1/ubuntu/amd64/latest/amazon-cloudwatch-agent.deb",
                 "chmod +x amazon-cloudwatch-agent.deb",
                 "sudo dpkg -i -E ./amazon-cloudwatch-agent.deb"
