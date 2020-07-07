@@ -3,9 +3,9 @@ Description=Unit for starting cloudwatch agent
 After=network.target
 
 [Service]
-ExecStart=/home/ubuntu/scripts/csye6225-cloudwatch.sh
-User=ubuntu
-Group=ubuntu
+ExecStart=/home/ubuntu/cloudwatch/csye6225-cloudwatch.sh
+User=root
+Group=root
 KillMode=process
 Restart=on-failure
 
