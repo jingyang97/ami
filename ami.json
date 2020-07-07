@@ -81,12 +81,12 @@
         {
             "type": "shell",
             "inline": [
-                "sudo mkdir /home/ubuntu/webapp-logs",
+                "sudo mkdir /home/ubuntu/cloudwatch",
                 "cd /home/ubuntu",
                 "sudo chown root.root csye6225-cloudwatch.service",
                 "sudo chown root.root csye6225-webapp.service",
-                "sudo chmod 755 csye6225-cloudwatch.service",
-                "sudo chmod 755 csye6225-webapp.service",
+                "sudo chmod 644 csye6225-cloudwatch.service",
+                "sudo chmod 644 csye6225-webapp.service",
                 "sudo mv csye6225-cloudwatch.service /lib/systemd/system",
                 "sudo mv csye6225-webapp.service /lib/systemd/system",
                 "sudo systemctl enable csye6225-cloudwatch.service",
