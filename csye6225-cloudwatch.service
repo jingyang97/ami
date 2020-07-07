@@ -8,6 +8,7 @@ User=root
 Group=root
 KillMode=process
 Restart=on-failure
+Type=forking
 
 [Install]
 WantedBy=multi-user.target
