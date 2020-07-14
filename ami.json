@@ -81,6 +81,7 @@
         {
             "type": "shell",
             "inline": [
+                "sudo pip3 install awscli",
                 "sudo mkdir /home/ubuntu/cloudwatch",
                 "sudo mkdir /home/ubuntu/webapp-logs",
                 "cd /home/ubuntu",
