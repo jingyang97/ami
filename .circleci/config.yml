@@ -57,3 +57,5 @@ jobs:
 #           context: csye6225-aws-dev
 #           requires:
 #             - validate
+
+# "sudo apt-get install mysql-client --fix-missing --fix-broken -y"
